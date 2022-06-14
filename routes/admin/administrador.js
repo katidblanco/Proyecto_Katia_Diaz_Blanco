@@ -2,7 +2,9 @@ var express = require('express');
 const pool = require('../../models/bd');//FALTABA....................
 var router = express.Router();
 var administradorModel = require('../../models/administradorModel');
-
+var util = require('util');
+var cloudinary = require('cloudinary').v2;
+const uploader = util.promisify(cloudinary.uploader.upload);
 
 /* GET home page. */
 router.get('/', async function (req, res, next) {
@@ -33,8 +35,19 @@ router.get('/agregar', (req, res, next) => {
 // agregar cuando toco el boton guardar=== REVISADO M5U2 OK
 router.post('/agregar', async (req, res, next) => {
   try {
+    var img_id = '';
+    if (req.files && Object.keys(req.files).length > 0) {
+      imagen = req.files.imagen;
+      img_id = (await uploader(imagen.tempFilePath)).public_id;
+    }
+
+
     if (req.body.titulo != "" && req.body.cuerpo != "") {
-      await administradorModel.insertAdministrador(req.body);
+      await administradorModel.insertAdministrador({
+        ...req.body,//spread
+        img_id
+      });
+      
       res.redirect('/admin/administrador')
     } else {
       res.render('admin/agregar', {
