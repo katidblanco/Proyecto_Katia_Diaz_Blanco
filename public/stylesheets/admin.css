@@ -1,0 +1,122 @@
+/*
+font-family: 'Playfair Display', serif;
+font-family: 'Roboto', sans-serif;
+*/
+
+body{
+    background-image: url(../images/fondo.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+h1{
+    font-family: 'Playfair Display', serif;
+    color: white;
+    font-size: 50px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+#quienscontblog{
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    padding-left: 50px;
+    padding-right: 0px;
+    font-size: 15px;
+}
+
+.nav a{
+    color: white;
+}
+
+.nav a:hover{
+    color: aquamarine;
+    font-weight: bolder;
+}
+
+.clases{
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+}
+
+.seccion, .titulos{
+    font-family: 'Playfair Display', serif;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    font-size: 40px;
+    text-decoration: none;
+}
+
+/*Formulario de login=====================================*/
+
+.form-group{
+    color: white;
+    padding-top: 10px;
+    padding-left: 38px;
+    font-weight: bolder;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    margin-left: 27%;
+}
+
+#btnlog{
+    font-size: 16px;
+    margin-left: 605px;
+    width: 15%;
+    font-weight: bolder;
+}
+
+/*cerrar sesion=============================================*/
+p {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bolder;
+    font-size: 20px;
+    padding-left: 0px;
+}
+
+
+/*Listado de Novedades =====================================*/
+h2{
+    font-family: 'Playfair Display', serif;
+    color: white;
+    text-align: left;
+    cursor: pointer;
+    font-size: 40px;
+}
+
+/*tabla======================================================*/
+.table{
+    color: white;
+    background-color: black;
+}
+
+/* Estilos de página AGREGAR ==================================*/
+
+.form-agregar{
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bolder;
+    font-size: 20px;
+    
+}
+
+footer{
+    background-color: black;
+    text-align: left;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    font-size: 80%;
+}
+
+
+

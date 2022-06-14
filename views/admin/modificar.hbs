@@ -1,0 +1,35 @@
+<div class="container-fluid" style="background-color: rgba(10, 10, 10, 50%)">
+    <div class="container">
+        <div class="row">
+            <br />
+            <h2 class="titulos">MODIFICAR PUBLICACION: {{administrador.id}} </h2>
+        </div>
+        <div class="row">
+            <form action="/admin/administrador/modificar" method="post">
+                <input type="hidden" value="{{administrador.id}}" name="id">
+                <div class="form-agregar">
+                    <label for="titulo">Título</label> <br>
+                    <input type="text" class="form-control" name="titulo" value="{{administrador.Titulo}}">
+                </div>
+        </div>
+        <div class="row">
+            <div class="form-agregar" style="margin-top: 10px;">
+                <label for="cuerpo">Contenido</label> <br>
+                <textarea name="cuerpo" class="form-control" style="height: 150px;">{{administrador.Cuerpo}}</textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div>
+                <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Modificar</button>
+            </div>
+        </div>
+
+        </form>
+        <div class="row">
+            {{#if error}}
+            <p>{{message}}</p>
+            {{/if}}
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="container-fluid" style="background-color: rgba(10, 10, 10, 50%)">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <br />
+                <h2 class="titulos">ADMINISTRADOR:</h2>
+
+                {{!-- FORMULARIO DE LOGIN =====================================--}}
+
+                <form action="/admin/login" method="post">
+                    <div class="form-group col-md-5">
+                        <label for="usuario">Usuario:</label>
+                        <input type="text" class="form-control" id="usuario" placeholder="..." name="usuario">
+                    </div>
+
+                    <div class="form-group col-md-5">
+                        <label for="password">Password:</label>
+                        <input type="text" class="form-control" id="password" placeholder="..." name="password">
+                    </div>
+
+                    <br>
+                    <div class="row">
+                        <button type="submit" class="btn btn-primary" id="btnlog">Enviar</button>
+                    </div>
+                </form>
+            </div>
+            {{#if error}}
+            <div class="container">
+                <p style="color:white">Usuario y contraseña incorrectos</p>
+            </div>
+            {{/if}}
+            </div>
+            <br>

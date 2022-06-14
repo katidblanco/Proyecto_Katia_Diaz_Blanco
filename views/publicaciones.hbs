@@ -1,0 +1,56 @@
+<div class="container-fluid" style="background-color: rgba(10, 10, 10, 50%)">
+    <div class="container">
+        <br>
+        <div class="row">
+
+            <br />
+            <h2 class="titulos">PUBLICACIONES:</h2>
+        </div>
+
+        <div class="row">
+            <p class="textosecciones">
+                Publicamos noticias, datos interesantes y tutoriales relacionados
+                con la informática y la tecnología:
+            </p>
+        </div>
+        <br>
+
+        <div class="row">
+            {{#each administrador}}
+            <section class="noticias">
+                <a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#modal{{id}}"><img
+                        src="images/inf.jpg" alt="">
+                    <p>{{Titulo}}</p>
+                </a>
+            </section>
+            {{/each}}
+            </ul>
+        </div>
+    </div>
+
+    {{!-- inicio modal --}}
+    {{#each administrador}}
+    <div class="modal fade" id="modal{{id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="exampleModalLabel">{{titulo}}</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h4>{{Titulo}}</h4>
+                    <p>{{Cuerpo}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+    {{!-- fin modal --}}
+</div>
+{{!-- fin publicaciones --}}
+</div>
+{{!-- fin fila --}}
+
+
+</div>
