@@ -2,32 +2,33 @@ var express = require('express');
 const pool = require('../../models/bd');//FALTABA....................
 var router = express.Router();
 var administradorModel = require('../../models/administradorModel');
-var util = require('util'); 
+var util = require('util');
 var cloudinary = require('cloudinary').v2;
-const uploader = util.promisify(cloudinary.uploader.upload);
+var uploader = util.promisify(cloudinary.uploader.upload);
+const destroy = util.promisify(cloudinary.uploader.destroy);
 
 /* GET home page. */
 router.get('/', async function (req, res, next) {
 
   var administrador = await administradorModel.getAdministrador();
 
-  administrador = administrador.map(novedad => { 
-  if (novedad.img_id) {
-    const imagen = cloudinary.image(novedad.img_id, {
-      width: 80,
-      height: 80,
-      crop: 'fill'
-    });
-    return{
-      ...novedad,
-      imagen
+  administrador = administrador.map(novedad => {
+    if (novedad.img_id) {
+      const imagen = cloudinary.image(novedad.img_id, {
+        width: 80,
+        height: 80,
+        crop: 'fill'
+      });
+      return {
+        ...novedad,
+        imagen
+      }
+    } else {
+      return {
+        ...novedad,
+        imagen: ' '
+      }
     }
-  } else {
-    return{
-      ...novedad,
-      imagen:' '
-    }
-  }
   });
 
   res.render('admin/administrador', {
@@ -40,6 +41,11 @@ router.get('/', async function (req, res, next) {
 //ELIMINAR PUBLICACION==========================================
 router.get('/eliminar/:id', async (req, res, next) => {
   var id = req.params.id;
+
+  let novedad = await administradorModel.getAdministradorById(id);
+  if (novedad.img_id) {
+    await (destroy(novedad.img_id));
+  }
 
   await administradorModel.deleteAdministradorById(id);
   res.redirect('/admin/administrador')
@@ -97,14 +103,32 @@ router.get('/modificar/:id', async (req, res, next) => {
     layout: 'admin/layout',
     administrador
   });
-}); //cierra modificar
+}); //cierra get modificar
 
 //modificar publicación BOTON MODIFICAR
 router.post('/modificar', async (req, res, next) => {
   try {
+    let img_id = req.body.img_original;
+    let borrar_img_vieja = false;
+
+    if (req.body.img_delete === "1") {
+      img_id = null;
+      borrar_img_vieja = true;
+    } else {
+      if (req.files && Object.keys(req.files).length > 0) {
+        imagen = req.files.imagen;
+        img_id = (await uploader(imagen.tempFilePath)).public_id;
+        borrar_img_vieja = true;
+      }
+    }
+    if (borrar_img_vieja && req.body.img_original) {
+      await (destroy(req.body.img_original));
+    }
+
     var obj = {
       titulo: req.body.titulo,
-      cuerpo: req.body.cuerpo
+      cuerpo: req.body.cuerpo,
+      img_id
     }
 
     await administradorModel.modificarAdministradorById(obj, req.body.id);

@@ -5,7 +5,7 @@
             <h2 class="titulos">MODIFICAR PUBLICACION: {{administrador.id}} </h2>
         </div>
         <div class="row">
-            <form action="/admin/administrador/modificar" method="post">
+            <form action="/admin/administrador/modificar" method="post" enctype="multipart/form-data">
                 <input type="hidden" value="{{administrador.id}}" name="id">
                 <div class="form-agregar">
                     <label for="titulo">Título</label> <br>
@@ -17,6 +17,20 @@
                 <label for="cuerpo">Contenido</label> <br>
                 <textarea name="cuerpo" class="form-control" style="height: 150px;">{{administrador.Cuerpo}}</textarea>
             </div>
+        </div>
+        <div class="row">
+            <div class="form-agregar">
+                <p>
+                    <br><label>Imagen: </label><br>
+                    <input type="file" name="imagen" id="imagen">
+                </p>
+                <p>
+                    <label><input type="checkbox" name="img_delete" id="img_delete" value="1"> ¿Eliminar imagen
+                        actual?</label>
+                    <input type="hidden" name="img_original" value="{{novedad.img_id}}">
+                </p>
+            </div>
+
         </div>
         <div class="row">
             <div>
