@@ -2,13 +2,34 @@ var express = require('express');
 const pool = require('../../models/bd');//FALTABA....................
 var router = express.Router();
 var administradorModel = require('../../models/administradorModel');
-var util = require('util');
+var util = require('util'); 
 var cloudinary = require('cloudinary').v2;
 const uploader = util.promisify(cloudinary.uploader.upload);
 
 /* GET home page. */
 router.get('/', async function (req, res, next) {
+
   var administrador = await administradorModel.getAdministrador();
+
+  administrador = administrador.map(novedad => { 
+  if (novedad.img_id) {
+    const imagen = cloudinary.image(novedad.img_id, {
+      width: 80,
+      height: 80,
+      crop: 'fill'
+    });
+    return{
+      ...novedad,
+      imagen
+    }
+  } else {
+    return{
+      ...novedad,
+      imagen:' '
+    }
+  }
+  });
+
   res.render('admin/administrador', {
     layout: 'admin/layout',
     usuario: req.session.nombre,
@@ -47,7 +68,7 @@ router.post('/agregar', async (req, res, next) => {
         ...req.body,//spread
         img_id
       });
-      
+
       res.redirect('/admin/administrador')
     } else {
       res.render('admin/agregar', {
