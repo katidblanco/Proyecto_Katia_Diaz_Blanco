@@ -44,10 +44,10 @@ app.use(session({
         console.log(error);
       }
     }
-app.use(fileUpload( {
+app.use(fileUpload({
   useTempFiles: true,
   tempFileDir: '/tmp/'
-} ));
+}));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/admin/login', loginRouter);
