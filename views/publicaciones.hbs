@@ -19,7 +19,7 @@
             {{#each administrador}}
             <section class="noticias">
                 <a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#modal{{id}}"><img
-                        src="{{imagen}}" alt="">
+                        src="{{imagen}}">
                     <p>{{Titulo}}</p>
                 </a>
             </section>
@@ -34,13 +34,14 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h3 class="modal-title" id="exampleModalLabel">{{titulo}}</h3>
+                    <h3 class="modal-title" id="exampleModalLabel">PUBLICACIÓN {{id}}</h3>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                     </button>
                 </div>
                 <div class="modal-body">
-                    <h4>{{Titulo}}</h4>
-                    <p>{{Cuerpo}}</p>
+                    <h4>{{Titulo}}</h4> <br>
+                    <img src="{{imagen}}"> <br>
+                    <p class="cuerpomodal">{{Cuerpo}}</p>
                 </div>
             </div>
         </div>
