@@ -2,12 +2,31 @@ var express = require('express');
 var router = express.Router();
 var nodemailer = require('nodemailer')
 var administradorModel = require('../models/administradorModel');
-
-
 /* GET home page. */
 router.get('/', async function (req, res, next) {
 
   var administrador = await administradorModel.getAdministrador();
+
+  // empieza imagen====================================
+  administrador = administrador.splice(0, 5);//seleccionamos los primeros 5 elementos del array
+  administrador = administrador.map(novedad => {
+    if (novedad.img_id) {
+      const imagen = cloudinary.url(novedad.img_id, {
+        width: 460,
+        crop: 'fill'
+      });
+      return {
+        ...novedad,
+        imagen
+      }
+    } else {
+      return {
+        ...novedad,
+        imagen: '/images/noimage.jpg'
+      }
+    }
+  });
+  // cierra imagen===================================
   res.render('publicaciones', {
     administrador
   });
