@@ -2,27 +2,27 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Clases de Informática</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clases de Informática</title>
 
-    <!-- Fuente Playfair de google fonts===================================     -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet" />
+  <!-- Fuente Playfair de google fonts===================================     -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet" />
 
-    <!-- Fuente ROBOTO de googlefonts================================== -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet" />
+  <!-- Fuente ROBOTO de googlefonts================================== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet" />
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="/stylesheets/admin.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="/stylesheets/admin.css">
 </head>
 <!-- Body barra de navegacion================================================ -->
 
@@ -39,65 +39,78 @@
           Clases y asesorias de informática y tecnología a domicilio
         </p>
       </div>
+  {{!-- NAVEGACION --}}
       <div id="quienscontblog" class="row">
-        {{!-- NAVEGACION --}}
-        <ul class="nav justify-content-center">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/quiensoy">Quien soy</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/contacto">Contacto</a>
-          </li>
-          <li>
-            <a class="nav-link" href="/publicaciones">Publicaciones</a>
-          </li>
-          <li>
-            <a class="nav-link" href="/materiales">Materiales</a>
-          </li>
-          <li>
-            <a class="nav-link" href="/admin/login">Administración</a>
-          </li>
-        </ul>
+        <div class="col-9">
+          <ul class="nav justify-content-center">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/quiensoy">Quien soy</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contacto">Contacto</a>
+            </li>
+            <li>
+              <a class="nav-link" href="/publicaciones">Publicaciones</a>
+            </li>
+            <li>
+              <a class="nav-link" href="/materiales">Materiales</a>
+            </li>
+            <li>
+              <a class="nav-link" href="/admin/login">Administración</a>
+            </li>
+          </ul>
+        </div>
+   {{!-- Buscador================================== --}}
+        <div class="col-2 text-right">
+          <form class="form-inline" action="/admin/administrador" method="get">
+            <input class="form-control" type="search" placeholder="Buscar" aria-label="Search" name="q">
+        </div>
+        <div class="col-1 text-right">
+          <button class="btn btn-secondary my-10 my-sm-0" type="submit" id="btnbuscar">
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </button>
+          </form>
+        </div>
       </div>
 
     </div>
   </div>
-  </div>
+  
 
   <br /><br /><br /><br /><br /><br><br><br><br>
 
-  
-    {{{body}}}
+
+  {{{body}}}
 
 
-    <footer>
-  <div id="quienscontblog" class="row">
-        {{!-- NAVEGACION --}}
-        <ul class="nav justify-content-center">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/quiensoy">Quien soy</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/contacto">Contacto</a>
-          </li>
-          <li>
-            <a class="nav-link" href="/publicaciones">Publicaciones</a>
-          </li>
-          <li>
-            <a class="nav-link" href="/materiales">Materiales</a>
-          </li>
-          <li>
-            <a class="nav-link" href="/admin/login">Administración</a>
-          </li>
-        </ul>
-      </div>
-</footer>
+  <footer>
+    <div id="quienscontblog" class="row">
+      {{!-- NAVEGACION --}}
+      <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/quiensoy">Quien soy</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contacto">Contacto</a>
+        </li>
+        <li>
+          <a class="nav-link" href="/publicaciones">Publicaciones</a>
+        </li>
+        <li>
+          <a class="nav-link" href="/materiales">Materiales</a>
+        </li>
+        <li>
+          <a class="nav-link" href="/admin/login">Administración</a>
+        </li>
+      </ul>
+    </div>
+  </footer>
 
 </body>
 
