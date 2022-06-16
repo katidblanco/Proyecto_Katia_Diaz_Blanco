@@ -13,7 +13,6 @@ var adminRouter = require('./routes/admin/administrador');
 // creamos las rutas a paginas del proyecto
 var quiensoyRouter = require('./routes/quiensoy');
 var contactoRouter = require('./routes/contacto');
-var materialesRouter = require('./routes/materiales');
 var publicacionesRouter = require('./routes/publicaciones');
 
 var app = express();
@@ -59,7 +58,6 @@ app.use('/admin/administrador', secured, adminRouter);
 
 app.use('/quiensoy',quiensoyRouter);
 app.use('/contacto',contactoRouter);
-app.use('/materiales',materialesRouter);
 app.use('/publicaciones',publicacionesRouter);
 
 
