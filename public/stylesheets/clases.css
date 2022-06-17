@@ -242,9 +242,9 @@ h4 {
     font-size: 18px;
 }
 
-.btn {
+#btncont {
     font-size: 16px;
-    margin-left: 575px;
+    margin-left: 52%;
     width: 15%;
     font-weight: bolder;
 }

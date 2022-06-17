@@ -3,15 +3,15 @@ font-family: 'Playfair Display', serif;
 font-family: 'Roboto', sans-serif;
 */
 
-body{
+body {
     background-image: url(../images/fondo.jpg);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-    
+
 }
 
-h1{
+h1 {
     font-family: 'Playfair Display', serif;
     color: white;
     font-size: 50px;
@@ -19,7 +19,7 @@ h1{
     text-align: center;
 }
 
-#quienscontblog{
+#quienscontblog {
     font-family: 'Roboto', sans-serif;
     color: white;
     font-weight: bold;
@@ -30,16 +30,16 @@ h1{
     font-size: 15px;
 }
 
-.nav a{
+.nav a {
     color: white;
 }
 
-.nav a:hover{
+.nav a:hover {
     color: aquamarine;
     font-weight: bolder;
 }
 
-.clases{
+.clases {
     font-family: 'Roboto', sans-serif;
     color: white;
     font-weight: bold;
@@ -47,7 +47,8 @@ h1{
     text-align: center;
 }
 
-.seccion, .titulos{
+.seccion,
+.titulos {
     font-family: 'Playfair Display', serif;
     color: white;
     text-align: center;
@@ -58,19 +59,19 @@ h1{
 
 /*Formulario de login=====================================*/
 
-.form-group{
+.form-group {
     color: white;
     padding-top: 10px;
-    padding-left: 38px;
+    padding-left: 35%;
+    padding-right: 35%;
     font-weight: bolder;
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
-    margin-left: 27%;
 }
 
-#btnlog{
+#btnlog {
     font-size: 16px;
-    margin-left: 605px;
+    margin-left: 50%;
     width: 15%;
     font-weight: bolder;
 }
@@ -86,7 +87,7 @@ p {
 
 
 /*Listado de Novedades =====================================*/
-h2{
+h2 {
     font-family: 'Playfair Display', serif;
     color: white;
     text-align: left;
@@ -95,23 +96,22 @@ h2{
 }
 
 /*tabla======================================================*/
-.table{
+.table {
     color: white;
     background-color: black;
 }
 
 /* Estilos de página AGREGAR ==================================*/
 
-.form-group{
+.form-group {
     color: white;
     font-family: 'Roboto', sans-serif;
     font-weight: bolder;
     font-size: 20px;
     margin-left: 0%;
-    
 }
 
-footer{
+footer {
     background-color: black;
     text-align: left;
     font-family: 'Roboto', sans-serif;
@@ -119,5 +119,10 @@ footer{
     font-size: 80%;
 }
 
-
-
+/* Estilos de página MODIFICAR ==================================*/
+#btnmod{
+    font-size: 16px;
+   
+    width: 15%;
+    font-weight: bolder;
+}
