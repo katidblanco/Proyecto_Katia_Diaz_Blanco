@@ -71,7 +71,7 @@ h1 {
 
 #btnlog {
     font-size: 16px;
-    margin-left: 50%;
+    margin-left: 35%;
     width: 15%;
     font-weight: bolder;
 }
@@ -111,18 +111,20 @@ h2 {
     margin-left: 0%;
 }
 
-footer {
-    background-color: black;
-    text-align: left;
-    font-family: 'Roboto', sans-serif;
-    color: white;
-    font-size: 80%;
-}
-
 /* Estilos de página MODIFICAR ==================================*/
 #btnmod{
     font-size: 16px;
-   
+    margin-left: 35%;
     width: 15%;
     font-weight: bolder;
 }
+
+/* FOOTER========================================== */
+footer p {
+    padding-top: 10px;
+}
+
+#buscar {
+    padding: 10px;
+}
+
