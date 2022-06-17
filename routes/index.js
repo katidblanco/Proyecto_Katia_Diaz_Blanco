@@ -10,7 +10,7 @@ router.get('/', async function(req, res, next) {
 var administrador = await administradorModel. getAdministrador()
 
 // ULTIMA PUBlicacion ====================================
-administrador = administrador.splice(0, 1); //seleccionamos el primer elemento dl array
+administrador = administrador.splice(0, length-1); //seleccionamos el ultimo elemento del array
 administrador = administrador.map(novedad => {
   if (novedad.img_id) {
     const imagen = cloudinary.url(novedad.img_id, {
