@@ -2,11 +2,33 @@ var express = require('express');
 var router = express.Router();
 var nodemailer=require('nodemailer')
 var administradorModel = require('../models/administradorModel');
+var cloudinary = require('cloudinary').v2;//AGREGADO IMAGEN ULTIMA PUB
 
 /* GET home page. */
 router.get('/', async function(req, res, next) {
 
 var administrador = await administradorModel. getAdministrador()
+
+// ULTIMA PUBlicacion ====================================
+administrador = administrador.splice(0, 1); //seleccionamos el primer elemento dl array
+administrador = administrador.map(novedad => {
+  if (novedad.img_id) {
+    const imagen = cloudinary.url(novedad.img_id, {
+      width: 460,
+      crop: 'fill'
+    });
+    return {
+      ...novedad,
+      imagen
+    }
+  } else {
+    return {
+      ...novedad,
+      imagen: '/images/noimage.jpg'
+    }
+  }
+});
+// cierra imagen===================================
  
   res.render('index', {
     administrador

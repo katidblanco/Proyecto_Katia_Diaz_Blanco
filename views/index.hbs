@@ -1,5 +1,4 @@
 <!-- carrusel======================================= -->
-
 <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel"
     style="background-color: rgba(10, 10, 10, 75%)">
     <div class="carousel-indicators">
@@ -15,7 +14,7 @@
             <div class="carousel-item active">
                 <img src="images/computacion1okk.jpg" class="d-block w-100" alt="..." />
                 <div class="carousel-caption d-none d-md-block">
-                    
+
                     <h2>Clases y asesorías de Informática</h2>
                     <p class="texto">
                         Microsoft Office, Redes Sociales, Zoom y otras herramientas digitales
@@ -36,7 +35,6 @@
                 <img src="images/computacion3okk.jpg" class="d-block w-100" alt="..." />
                 <div class="carousel-caption d-none d-md-block" id="carusel3">
                     <h2>18 años de experiencia avalan nuestro trabajo.</h2>
-
                 </div>
             </div>
         </div>
@@ -108,19 +106,20 @@
             <h3>Última publicación:</h3>
         </div>
         <div class="row">
+            {{#each administrador}}
             <section class="ultnoti">
-                <a href="/publicaciones"><img src="images/cargador-unico.jpg" alt="cargador unico"></a>
-                <p>En 2024 cargarás todos tus dispositivos con un solo cable: ¿Qué pasará con tu
-                    iPhone y tus viejos 'gadgets'? La mayoría de dispositivos electrónicos comercializados en la UE a
-                    partir de finales de
-                    2024 deberán...</p>
-                    
+                <a href="/publicaciones">
+                    <p>{{Titulo}}</p>
+                </a>
+                <a href="/publicaciones"><img src="{{imagen}}"></a>
             </section>
+            {{/each}}
         </div>
         <br>
         <div class="row">
-            <a href="/publicaciones" class="btn btn-primary">IR A LAS PUBLICACIONES</a>
+            <a href="/publicaciones" class="btn btn-primary" id="btnpub">Ir a todas las publicaciones</a>
         </div>
+        <br>
     </div>
 </div>
 <br />

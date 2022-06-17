@@ -9,7 +9,7 @@ router.get('/', async function (req, res, next) {
   var administrador = await administradorModel.getAdministrador();
 
   // empieza imagen====================================
-  administrador = administrador.splice(0, 6); //seleccionamos los primeros 5 elementos del array
+  administrador = administrador.splice(0, length-1); //seleccionamos los primeros 5 elementos del array
   administrador = administrador.map(novedad => {
     if (novedad.img_id) {
       const imagen = cloudinary.url(novedad.img_id, {
