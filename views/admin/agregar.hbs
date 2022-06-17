@@ -5,11 +5,11 @@
             <h2 class="titulos">AGREGAR NUEVA PUBLICACION:</h2>
         </div>
         <div class="row">
-            <form action="/admin/administrador/agregar" method="post" enctype="multipart/form-data"/>
-                <div class="form-group">
-                    <label for="titulo">Título</label> <br>
-                    <input type="text" class="form-control" placeholder="Titulo" name="titulo">
-                </div>
+            <form action="/admin/administrador/agregar" method="post" enctype="multipart/form-data" />
+            <div class="form-group">
+                <label for="titulo">Título</label> <br>
+                <input type="text" class="form-control" placeholder="Titulo" name="titulo">
+            </div>
         </div>
         <div class="row">
             <div class="form-group" style="margin-top: 10px;">
@@ -20,7 +20,7 @@
         </div>
         <div class="row">
             <div class="form-group">
-                <label>Imagen:<input type="file" class="form-control" name="imagen" id="imagen"/></label>
+                <label>Imagen:<input type="file" class="form-control" name="imagen" id="imagen" /></label>
                 <br>
             </div>
         </div>
@@ -30,13 +30,15 @@
                 <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Guardar</button>
             </div>
         </div>
-
         </form>
-
+        <br>
         <div class="row">
             {{#if error}}
             <p>{{message}}</p>
             {{/if}}
+        </div>
+        <div class="row">
+        <p><br><br><br><br></p>
         </div>
     </div>
 </div>
