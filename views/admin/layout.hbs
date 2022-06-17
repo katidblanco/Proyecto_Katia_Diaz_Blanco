@@ -39,46 +39,30 @@
           Clases y asesorias de informática y tecnología a domicilio
         </p>
       </div>
-  {{!-- NAVEGACION --}}
+      {{!-- NAVEGACION --}}
       <div id="quienscontblog" class="row">
-        <div class="col-9">
-          <ul class="nav justify-content-center">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/">Inicio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/quiensoy">Quien soy</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/contacto">Contacto</a>
-            </li>
-            <li>
-              <a class="nav-link" href="/publicaciones">Publicaciones</a>
-            </li>
-            <li>
-              <a class="nav-link" href="/materiales">Materiales</a>
-            </li>
-            <li>
-              <a class="nav-link" href="/admin/login">Administración</a>
-            </li>
-          </ul>
-        </div>
-   {{!-- Buscador================================== --}}
-        <div class="col-2 text-right">
-          <form class="form-inline" action="/admin/administrador" method="get">
-            <input class="form-control" type="search" placeholder="Buscar" aria-label="Search" name="q">
-        </div>
-        <div class="col-1 text-right">
-          <button class="btn btn-secondary my-10 my-sm-0" type="submit" id="btnbuscar">
-            <i class="fa fa-search" aria-hidden="true"></i>
-          </button>
-          </form>
-        </div>
+        <ul class="nav justify-content-center">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/quiensoy">Quien soy</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contacto">Contacto</a>
+          </li>
+          <li>
+            <a class="nav-link" href="/publicaciones">Publicaciones</a>
+          </li>
+          <li>
+            <a class="nav-link" href="/admin/login">Administración</a>
+          </li>
+        </ul>
       </div>
 
     </div>
   </div>
-  
+
 
   <br /><br /><br /><br /><br /><br><br><br><br>
 
@@ -86,29 +70,27 @@
   {{{body}}}
 
 
-  <footer>
-    <div id="quienscontblog" class="row">
-      {{!-- NAVEGACION --}}
-      <ul class="nav justify-content-center">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/">Inicio</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/quiensoy">Quien soy</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/contacto">Contacto</a>
-        </li>
-        <li>
-          <a class="nav-link" href="/publicaciones">Publicaciones</a>
-        </li>
-        <li>
-          <a class="nav-link" href="/materiales">Materiales</a>
-        </li>
-        <li>
-          <a class="nav-link" href="/admin/login">Administración</a>
-        </li>
-      </ul>
+  <footer class="">
+    <div class="container-fluid fixed-bottom" style="background-color: rgba(10, 10, 10, 100%)">
+      <div class="container">
+        <div class="row">
+          <div class="col-9">
+            <p>Clases de Informática a domicilio es un Sitio Web creado por Katia Díaz Blanco</p>
+          </div>
+          {{!-- Buscador================================== --}}
+          <div class="col-2 text-right">
+            <form class="form-inline" action="/admin/administrador" method="get">
+              <input class="form-control" type="search" placeholder="Buscar" aria-label="Search" name="q">
+          </div>
+          <div class="col-1 text-right">
+            <button class="btn btn-secondary my-10 my-sm-0" type="submit" id="btnbuscar">
+              <i class="fa fa-search" aria-hidden="true"></i>
+            </button>
+          </div>
+          </form>
+
+        </div>
+      </div>
     </div>
   </footer>
 
