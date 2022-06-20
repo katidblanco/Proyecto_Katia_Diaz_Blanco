@@ -36,13 +36,15 @@ async function getAdministradorById(id) {
 //UPDATE PUBLICACION
 async function modificarAdministradorById(obj, id) {
     try {
-      var query = "update administrador set ? where id=? ";
-      var rows = await pool.query(query, [obj, id]);
-      return rows;
+        var query = "update administrador set ? where id=? ";
+        var rows = await pool.query(query, [obj, id]);
+        return rows;
     } catch (error) {
-      throw error;
+        throw error;
     }
-  } //cierra update publicacion
+} //cierra update publicacion
 
 
-module.exports = {getAdministrador, deleteAdministradorById, insertAdministrador, getAdministradorById, modificarAdministradorById} //REVISADO M5U2 OK
+
+
+module.exports = { getAdministrador, deleteAdministradorById, insertAdministrador, getAdministradorById, modificarAdministradorById } 

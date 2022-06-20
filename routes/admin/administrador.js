@@ -2,6 +2,8 @@ var express = require('express');
 const pool = require('../../models/bd');//FALTABA....................
 var router = express.Router();
 var administradorModel = require('../../models/administradorModel');
+
+
 var util = require('util');
 var cloudinary = require('cloudinary').v2;
 var uploader = util.promisify(cloudinary.uploader.upload);
@@ -30,6 +32,7 @@ router.get('/', async function (req, res, next) {
       }
     }
   });
+
 
   res.render('admin/administrador', {
     layout: 'admin/layout',
