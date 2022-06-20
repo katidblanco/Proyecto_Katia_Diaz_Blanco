@@ -86,7 +86,7 @@ h2 {
 
 /* QUIEN Soy texto==================================== */
 
-.textosecciones {
+.textosecciones, p {
     font-family: 'Roboto', sans-serif;
     color: white;
     font-weight: bolder;
@@ -224,7 +224,7 @@ h4 {
     font-family: 'Roboto', sans-serif;
     color: black;
     font-weight: bolder;
-
+    margin-right: 10px;
     text-align: justify;
     margin-top: 10px;
     font-size: 16px;
